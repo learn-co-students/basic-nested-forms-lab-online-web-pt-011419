@@ -12,5 +12,12 @@ class RecipesController < ApplicationController
   end
 
   def create
+    raise params.inspect
+    # @recipe = Recipe.create!(recipe_params)
   end
+
+  private 
+    def recipe_params 
+      params.require(:recipe).permit(:title)
+    end 
 end
